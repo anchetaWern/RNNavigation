@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-//Icon.loadFont();
+import React, { Component } from "react";
+import { View, Text, Button, StyleSheet } from "react-native";
+import Icon from "react-native-vector-icons/FontAwesome";
+Icon.loadFont();
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import {goToLogin} from '../../navigation';
+import { goToLogin } from "../../navigation";
 
 export default class Home extends Component {
   render() {
-    const {username} = this.props;
+    const { username } = this.props;
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Hi {username}!</Text>
@@ -20,7 +20,7 @@ export default class Home extends Component {
   //
 
   logout = async () => {
-    await AsyncStorage.removeItem('username');
+    await AsyncStorage.removeItem("username");
     goToLogin();
   };
 }
@@ -28,11 +28,11 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   text: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
