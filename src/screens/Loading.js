@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
+import React, {Component} from 'react';
+import {View, Text, ActivityIndicator, StyleSheet} from 'react-native';
 
-import { goToLogin, goToTabs } from '../../navigation';
+import {goToLogin, goToTabs} from '../../navigation';
 
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default class Loading extends Component {
-
   async componentDidMount() {
     const username = await AsyncStorage.getItem('username');
 
@@ -16,7 +15,6 @@ export default class Loading extends Component {
       goToLogin();
     }
   }
-
 
   render() {
     return (
@@ -32,6 +30,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
